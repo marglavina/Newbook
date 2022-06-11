@@ -27,9 +27,17 @@ public class AdminPanel extends JPanel {
 			new Object[][] {
 			},
 			new String[] {
-				"Name", "Surname", "Sex"
+				"New column", "Name", "Surname", "Sex"
 			}
-		));
+		) {
+			boolean[] columnEditables = new boolean[] {
+				false, true, true, true
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
+		});
+		table.getColumnModel().getColumn(0).setResizable(false);
 		
 		JButton deleteBtn = new JButton("Delete selected user");
 		deleteBtn.setBounds(20, 378, 183, 23);

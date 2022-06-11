@@ -115,10 +115,12 @@ public class NewBook {
 		adminPanel.add(scrollPane);
 		
 		JButton adminLogOutBtn = new JButton("Log out");
+		adminLogOutBtn.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		adminLogOutBtn.setBounds(324, 34, 89, 23);
 		adminPanel.add(adminLogOutBtn);
 		
 		table = new JTable();
+		table.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		scrollPane.setViewportView(table);
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
@@ -126,26 +128,39 @@ public class NewBook {
 			new String[] {
 				"Name", "Surname", "Sex"
 			}
-		));
+		)
+		{
+			boolean[] columnEditables = new boolean[] {
+				true, true, false
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
+		});
 		
-		JButton deleteBtn = new JButton("Delete selected user");
+		JButton deleteBtn = new JButton("Click for delete info.");
+		deleteBtn.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		deleteBtn.setBounds(20, 378, 183, 23);
 		adminPanel.add(deleteBtn);
 		
 		adminSearch = new JTextField();
+		adminSearch.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		adminSearch.setBounds(20, 412, 249, 20);
 		adminPanel.add(adminSearch);
 		adminSearch.setColumns(10);
 		
 		JButton adminSerachBtn = new JButton("Search by surname");
+		adminSerachBtn.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		adminSerachBtn.setBounds(279, 411, 147, 23);
 		adminPanel.add(adminSerachBtn);
 		
 		JButton updateBtn = new JButton("Update selected user");
+		updateBtn.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		updateBtn.setBounds(213, 378, 213, 23);
 		adminPanel.add(updateBtn);
 		
 		JLabel usernameUsed = new JLabel("Username already in use!!");
+		usernameUsed.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		usernameUsed.setEnabled(true);
 		usernameUsed.setForeground(Color.RED);
 		usernameUsed.setBounds(170, 279, 167, 20);
@@ -153,25 +168,30 @@ public class NewBook {
 		usernameUsed.setVisible(false);
 		
 		JLabel registerLabel_4 = new JLabel("Sex");
+		registerLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		registerLabel_4.setBounds(114, 214, 46, 14);
 		registerPanel.add(registerLabel_4);
 		
 		JLabel lblNewLabel_3 = new JLabel("Surname");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblNewLabel_3.setBounds(114, 165, 46, 14);
 		registerPanel.add(lblNewLabel_3);
 		
 		surnameReg = new JTextField();
+		surnameReg.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		surnameReg.setText("");
 		surnameReg.setColumns(10);
 		surnameReg.setBounds(170, 162, 167, 20);
 		registerPanel.add(surnameReg);
 		
 		nameReg = new JTextField();
+		nameReg.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		nameReg.setColumns(10);
 		nameReg.setBounds(170, 114, 167, 20);
 		registerPanel.add(nameReg);
 		
 		JLabel registerLabel_2 = new JLabel("Name");
+		registerLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		registerLabel_2.setBounds(114, 117, 46, 14);
 		registerPanel.add(registerLabel_2);
 		
@@ -195,14 +215,17 @@ public class NewBook {
 		registerPanel.add(female);
 		
 		JLabel lblNewLabel_1 = new JLabel("Username");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblNewLabel_1.setBounds(114, 261, 55, 20);
 		registerPanel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_5 = new JLabel("Password");
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblNewLabel_5.setBounds(114, 313, 46, 14);
 		registerPanel.add(lblNewLabel_5);
 		
 		usernameReg = new JTextField();
+		usernameReg.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		usernameReg.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -219,10 +242,12 @@ public class NewBook {
 		usernameReg.setColumns(10);
 		
 		passwordReg = new JPasswordField();
+		passwordReg.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		passwordReg.setBounds(170, 310, 167, 20);
 		registerPanel.add(passwordReg);
 		
 		JButton registrationBtn = new JButton("Register");
+		registrationBtn.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		registrationBtn.setBounds(248, 363, 89, 23);
 		registerPanel.add(registrationBtn);
 		
@@ -232,6 +257,7 @@ public class NewBook {
 		panelHome.add(lblNewLabel);
 		
 		username = new JTextField();
+		username.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		username.setBounds(177, 174, 168, 20);
 		panelHome.add(username);
 		username.setColumns(10);
@@ -252,41 +278,49 @@ public class NewBook {
 		loginPanel.add(logonLabel);
 		
 		JLabel logonLabel_1 = new JLabel("");
+		ImageIcon imgThisImg = new ImageIcon("profile.png");
 		logonLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		logonLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 5));
-		logonLabel_1.setIcon(new ImageIcon("D:\\programiranje java\\NewBook\\profile.png"));
-		logonLabel_1.setBounds(22, 86, 137, 165);
+		logonLabel_1.setIcon(imgThisImg);
+		logonLabel_1.setBounds(22, 86, 147, 165);
 		loginPanel.add(logonLabel_1);
 		
 		JLabel logonLabel_2 = new JLabel("Name");
+		logonLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		logonLabel_2.setBounds(169, 100, 46, 14);
 		loginPanel.add(logonLabel_2);
 		
 		JButton logoutBtn = new JButton("Logout");
+		logoutBtn.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		logoutBtn.setBounds(303, 225, 89, 23);
 		loginPanel.add(logoutBtn);
 		
 		
 		nameLogOn = new JTextField();
+		nameLogOn.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		nameLogOn.setBounds(225, 97, 167, 20);
 		loginPanel.add(nameLogOn);
 		nameLogOn.setColumns(10);
 		
 		JLabel logonLabel_3 = new JLabel("Surname");
+		logonLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		logonLabel_3.setBounds(169, 148, 46, 14);
 		loginPanel.add(logonLabel_3);
 		
 		surnameLogOn = new JTextField();
+		surnameLogOn.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		surnameLogOn.setText("");
 		surnameLogOn.setBounds(225, 145, 167, 20);
 		loginPanel.add(surnameLogOn);
 		surnameLogOn.setColumns(10);
 		
 		JLabel logonLabel_4 = new JLabel("Sex");
+		logonLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		logonLabel_4.setBounds(169, 197, 46, 14);
 		loginPanel.add(logonLabel_4);
 		
 		sexLogOn = new JTextField();
+		sexLogOn.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		sexLogOn.setBounds(225, 194, 167, 20);
 		loginPanel.add(sexLogOn);
 		sexLogOn.setColumns(10);
@@ -294,11 +328,13 @@ public class NewBook {
 		frame.getContentPane().add(loginPanel);
 		
 		JButton loginBtn = new JButton("Login");
+		loginBtn.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		
 		loginBtn.setBounds(263, 274, 82, 55);
 		panelHome.add(loginBtn);
 		
 		JLabel lblNewLabel_2 = new JLabel("Don't have acc?");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblNewLabel_2.setBounds(85, 268, 168, 35);
 		panelHome.add(lblNewLabel_2);
 		
@@ -308,20 +344,28 @@ public class NewBook {
 		panelHome.add(registerBtn);
 		
 		password = new JPasswordField();
+		password.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		password.setBounds(177, 219, 168, 20);
 		panelHome.add(password);
 		
-		JLabel wrongUsername = new JLabel("Wrong username or password!!");
+		JLabel wrongUsername = new JLabel("Wrong username or password!");
+		wrongUsername.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		wrongUsername.setForeground(Color.RED);
 		wrongUsername.setBounds(177, 235, 184, 28);
 		panelHome.add(wrongUsername);
 		wrongUsername.setVisible(false);
 		
-		JLabel blankUsername = new JLabel("Username or password can't be blank!!");
+		JLabel blankUsername = new JLabel("Username or password can't be blank!");
+		blankUsername.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		blankUsername.setForeground(Color.RED);
 		blankUsername.setBounds(177, 235, 249, 28);
 		panelHome.add(blankUsername);
 		blankUsername.setVisible(false);
+		
+		JButton regBackButtn = new JButton("Back");		
+		regBackButtn.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		regBackButtn.setBounds(352, 41, 73, 23);
+		registerPanel.add(regBackButtn);
 		
 		loginBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -467,7 +511,7 @@ public class NewBook {
 				passwordRegs = new String(passwordReg.getPassword());
 				
 				if(nameRegs.equals("") || surnameRegs.equals("")|| usernameRegs.equals("") || passwordRegs.equals("") || (!males && !females))
-					JOptionPane.showMessageDialog(frame, "All field must be entered!!");
+					JOptionPane.showMessageDialog(frame, "All field must be entered.");
 				else {
 				
 				try {
@@ -516,7 +560,7 @@ public class NewBook {
 						fw.write(usernameRegs+", "+passwordRegs+"\n");
 						fw.close();
 						
-						JOptionPane.showMessageDialog(frame, "Thank you for registration pls login.");
+						JOptionPane.showMessageDialog(frame, "Thank you for registration. You can login now.");
 						
 						nameReg.setText("");
 						surnameReg.setText("");
@@ -538,6 +582,8 @@ public class NewBook {
 				}	
 				blankUsername.setVisible(false);
 				wrongUsername.setVisible(false);
+				username.setText("");
+				password.setText("");
 			}
 				
 		}
@@ -552,6 +598,10 @@ public class NewBook {
 				wrongUsername.setVisible(false);
 				panelHome.setVisible(true);
 				adminPanel.setVisible(false);
+				adminSearch.setText("");
+				adminSerachBtn.doClick();
+
+				
 				
 				
 			}
@@ -579,7 +629,7 @@ public class NewBook {
 						int redBr = table.getSelectedRows().length;
 						int index = table.getSelectedRow();
 						if (redBr < 1)
-							JOptionPane.showMessageDialog(null, "Pls select one row!!");
+							JOptionPane.showMessageDialog(null, "You must select a row!");
 						else	
 						{
 							for(int i=0; i<redBr ; i++ ) 
@@ -638,7 +688,7 @@ public class NewBook {
 							}
 							catch (IOException e4)
 							{
-								JOptionPane.showMessageDialog(frame, "Something went wrong try again!!");
+								JOptionPane.showMessageDialog(frame, "Something went wrong try again!");
 							}
 						}
 					}
@@ -650,7 +700,6 @@ public class NewBook {
 						BufferedReader bf = new BufferedReader (new FileReader(users));
 						String allUsers;
 						String[] userName;
-						String[] oneUserForTable;
 						DefaultTableModel tables = (DefaultTableModel)table.getModel();
 						
 						
@@ -675,7 +724,7 @@ public class NewBook {
 				}
 				catch (Exception e3)
 				{
-					JOptionPane.showMessageDialog(frame, "Something went wrong try again !!");
+					JOptionPane.showMessageDialog(frame, "Something went wrong try again !");
 				}
 				
 				
@@ -695,20 +744,109 @@ public class NewBook {
 					TableRowSorter<DefaultTableModel> trs = new TableRowSorter<DefaultTableModel>(model);
 					//trs.setRowFilter(RowFilter.regexFilter(tfPretraga.getText().trim()));
 					String tekstPretraga = adminSearch.getText();
-					trs.setRowFilter(RowFilter.regexFilter(tekstPretraga,1));
+					trs.setRowFilter(RowFilter.regexFilter("(?i)"+tekstPretraga,1));
 					table.setRowSorter(trs);
 			        }
 				}
 
 				catch (Exception e5)
 				{
-					JOptionPane.showMessageDialog(null, "Something went wrong!!");
+					JOptionPane.showMessageDialog(null, "Something went wrong!");
 				}
 				
 				
 			}
 		}); 
 		
+		updateBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				try
+				{
+						int redBr = table.getSelectedRows().length;
+						int index = table.getSelectedRow();
+						if (redBr < 1)
+							JOptionPane.showMessageDialog(null, "You must select a row!");
+						else	
+						{
+							try
+							{
+								
+								File users = new File("users.txt");
+								BufferedReader bf = new BufferedReader (new FileReader(users));
+								String allUsers;
+								String[] userName;
+								brojac = 0;
+								
+								
+								while((allUsers = bf.readLine())!= null)
+								{
+									
+									userName = allUsers.split(", ");
+									FileWriter oneUser = new FileWriter(userName[0]+".txt", true);
+																		
+									oneUser.close();
+									
+									if(brojac == index) {
+																				
+										String [] updateUser = new String[3];
+										for(int i = 0; i<3;i++)
+											updateUser[i]= ((String)table.getModel().getValueAt(table.getSelectedRow(), i));
+										
+										
+											
+										oneUser = new FileWriter(userName[0]+".txt");
+										oneUser.write(""+updateUser[0]+", "+updateUser[1]+", "+updateUser[2]);
+										JOptionPane.showMessageDialog(frame, "User updated.");
+										oneUser.close();
+										break;
+										
+									}
+									
+									brojac++;
+																
+								}
+								
+								bf.close();
+
+
+								
+							}
+							catch (IOException e4)
+							{
+								JOptionPane.showMessageDialog(frame, "Something went wrong try again!");
+							}
+						}
+		
+				}
+				catch (Exception e3)
+				{
+					JOptionPane.showMessageDialog(frame, "Something went wrong try again !");
+				}
+				
+				
+			}
+		});
+		
+		regBackButtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				registerPanel.setVisible(false);
+				panelHome.setVisible(true);
+				
+				nameReg.setText("");
+				surnameReg.setText("");
+				usernameReg.setText("");
+				passwordReg.setText("");
+				buttonGroup.clearSelection();
+				wrongUsername.setVisible(false);
+				blankUsername.setVisible(false);
+				username.setText("");
+				password.setText("");
+				
+				
+			}
+		});
 		
 	}
 	

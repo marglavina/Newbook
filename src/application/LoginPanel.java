@@ -33,7 +33,7 @@ public class LoginPanel extends JPanel {
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 5));
-		lblNewLabel_1.setIcon(new ImageIcon("D:\\programiranje java\\NewBook\\profile.png"));
+		lblNewLabel_1.setIcon(new ImageIcon("profile.png"));
 		lblNewLabel_1.setBounds(22, 86, 137, 165);
 		add(lblNewLabel_1);
 		

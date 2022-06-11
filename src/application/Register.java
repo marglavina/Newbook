@@ -9,6 +9,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import javax.swing.ButtonGroup;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Register extends JPanel {
 	private JTextField surnameReg;
@@ -87,6 +89,15 @@ public class Register extends JPanel {
 		usernameUsed.setForeground(Color.RED);
 		usernameUsed.setBounds(170, 279, 167, 20);
 		add(usernameUsed);
+		
+		JButton regBackButtn = new JButton("Back");
+		regBackButtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		regBackButtn.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		regBackButtn.setBounds(338, 41, 73, 23);
+		add(regBackButtn);
 
 	}
 }
